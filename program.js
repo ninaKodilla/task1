@@ -3,7 +3,9 @@ process.stdin.setEncoding('utf-8');
 process.stdin.on('readable', function() {
     var input = process.stdin.read();
 
-    (!input) ? null : switched(input);
+    if (input) {
+        switched(input);
+    }
 });
 
 function switched(input) {
